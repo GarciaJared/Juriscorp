@@ -1,0 +1,64 @@
+---
+interface Props {
+    width: string;
+    height: string;
+}
+
+const { width, height } = Astro.props;
+---
+
+<section>
+    <div class="img-container">
+        <img
+            src="./banner.webp"
+            alt="Juriscorp despacho de abogados en Chihuahua"
+            width={width}
+            height={height}
+        />
+        <div class="overlay"></div>
+    </div>
+    <div class="main-text">
+        <h1>Son tres</h1>
+        <p>los pilares que sostienen nuestro esfuerzo.</p>
+    </div>
+    <div class="Cards"></div>
+</section>
+
+<style>
+    .img-container {
+        position: relative;
+    }
+    .img-container img {
+        display: block;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.5; /* Adjust opacity as needed */
+        z-index: 1;
+    }
+    .main-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        text-align: center;
+        color: white;
+    }
+    .main-text h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0.5em;
+    }
+    .main-text p {
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+</style>
