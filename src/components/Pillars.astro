@@ -1,0 +1,64 @@
+---
+const OurPillars = [
+    {
+        title: "Empatia",
+        description:
+            "Cada caso es único y lo tratamos con la sensibilidad y el respeto que mereces, asegurando que te sientas acompañado en cada paso del camino. Nuestro objetivo es hacerte más ameno este proceso.",
+    },
+    {
+        title: "Transparencia",
+        description:
+            "Te mantenemos informado sobre el progreso de tu caso, explicando cada detalle y eliminando sorpresas. Con nosotros, siempre sabrás exactamente dónde te encuentras y qué esperar.",
+    },
+    {
+        title: "Legalidad",
+        description:
+            "Nuestro compromiso es con la justicia y el cumplimiento riguroso de la ley. Nos distinguimos por nuestra integridad y ética, garantizando que cada acción y asesoría se alinee con los más altos estándares legales. Tu confianza y seguridad son nuestra prioridad.",
+    },
+];
+---
+
+<section>
+    {
+        OurPillars.map((pillar) => (
+            <div class="card">
+                <h2>{pillar.title}</h2>
+                <p>{pillar.description}</p>
+            </div>
+        ))
+    }
+</section>
+<style>
+    section {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        padding: 1rem;
+        top: -10em;
+        left: 0;
+        z-index: 1;
+    }
+    .card {
+        background-color: #f0f0f0;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        text-align: center;
+    }
+    .card:first-child {
+        background-color: #df8d05;
+        color: white;
+    }
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    p {
+        font-size: 1rem;
+        color: #666;
+    }
+    .p:first-child {
+        color: white;
+    }
+</style>

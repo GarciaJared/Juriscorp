@@ -1,4 +1,6 @@
 ---
+import Pillars from "./Pillars.astro";
+
 interface Props {
     width: string;
     height: string;
@@ -20,8 +22,8 @@ const { width, height } = Astro.props;
     <div class="main-text">
         <h1>Son tres</h1>
         <p>los pilares que sostienen nuestro esfuerzo.</p>
+        <Pillars />
     </div>
-    <div class="Cards"></div>
 </section>
 
 <style>
