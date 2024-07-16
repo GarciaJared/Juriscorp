@@ -1,0 +1,73 @@
+---
+interface ExperienceProps {
+    intro: string;
+    xp: number;
+    category: string;
+}
+const { intro } = Astro.props;
+const Xp = [
+    { category: "Familiares", xp: 15 },
+    { category: "Civiles", xp: 10 },
+    { category: "Corporativos", xp: 5 },
+    { category: "Penales", xp: 20 },
+];
+---
+
+<section>
+    <div class="intro">
+        <p>{intro}</p>
+    </div>
+    <div class="container">
+        {
+            Xp.map((item) => (
+                <div class="solved">
+                    <h2 class="number">{item.xp}</h2>
+                    <h4 class="category">{item.category}</h4>
+                </div>
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 20px;
+        padding: 1rem;
+        max-width: 800px;
+        margin: auto;
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .intro {
+        padding: 1rem;
+        max-width: 800px;
+        margin: auto;
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .solved {
+        padding: 1rem;
+        max-width: 800px;
+        margin: auto;
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .number {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0.5em;
+        align-content: start;
+    }
+    .category {
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1.5;
+        align-content: center;
+    }
+</style>

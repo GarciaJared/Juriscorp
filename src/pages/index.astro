@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import More from "../components/More.astro";
 import MainTitle from "../components/MainTitle.astro";
+import Experience from "../components/Experience.astro";
 ---
 
 <Layout title="Juriscorp despacho de abogados en Chihuahua">
@@ -12,7 +13,11 @@ import MainTitle from "../components/MainTitle.astro";
 	<Hero width="100%" height="40%" />
 	<More/>
 	<MainTitle 
-		title="Te contamos como los tres pilares se aplican en nuestro trabajo"
+		title="Nuestra Experiencia"
+	/>
+	<Experience
+	intro="Nuestro equipo de abogados cuenta con una amplia experiencia en diversas áreas del derecho."
+	xp={15}
 	/>
 	<main>
 		<ul role="list" class="link-card-grid">
