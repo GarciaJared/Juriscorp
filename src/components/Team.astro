@@ -1,0 +1,85 @@
+---
+import MainTitle from "./MainTitle.astro";
+
+const TeamMember = [
+    {
+        name: "Cesar Holguín",
+        role: "Abogado",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh.",
+        image: "./cesar.webp",
+    },
+    {
+        name: "Karla Montez",
+        role: "Practicante",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh.",
+        image: "./karla.webp",
+    },
+    {
+        name: "Jared García",
+        role: "Análista de datos",
+        description:
+            "¡Hola! me encargo de apoyar a nuestro equipo con la información necesaria para tomar decisiones informadas.",
+        image: "./jared garcia.webp",
+    },
+    {
+        name: "Danielle Suárez",
+        role: "Diseñador",
+        description:
+            "Mi función es diseñar las redes sociales y elementos visuales dentro de Juriscorp, me encargo de la imagén de Juriscorp.",
+        image: "./user.png",
+    },
+];
+---
+
+<MainTitle title="Nuestro equipo" />
+<section>
+    <div class="container">
+        {
+            TeamMember.map((member) => (
+                <div class="card">
+                    <img src={member.image} alt={member.name} />
+                    <h2>{member.name}</h2>
+                    <p>{member.role}</p>
+                    <p>{member.description}</p>
+                </div>
+            ))
+        }
+    </div>
+</section>
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    img {
+        vertical-align: middle;
+        width: 85%;
+        height: 70%;
+        border-radius: 50%;
+    }
+    h2 {
+        font-size: 1.9rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    h2::first-letter {
+        color: #f99e2e;
+        font-size: 2.5rem;
+    }
+    p {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+</style>
