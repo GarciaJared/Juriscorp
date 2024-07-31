@@ -1,9 +1,15 @@
 <nav>
     <div class="logo-container">
-        <a href="/">
-            <img src="/logo.svg" alt="Logo" width="100" />
-        </a>
-        <ul>  
+        <div class="logo-container">
+            <a href="/">
+                <img
+                    src="/juriscorp.svg"
+                    alt="Juriscorp despacho de abogados en Chihuahua"
+                />
+            </a>
+        </div>
+
+        <ul>
             <li>
                 <a href="/">Inicio</a>
             </li>
@@ -27,6 +33,16 @@
             justify-content: center;
             padding: 1rem;
             background-color: #23262d;
+        }
+        nav .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .logo-container img {
+            width: 100px;
         }
         ul {
             display: flex;

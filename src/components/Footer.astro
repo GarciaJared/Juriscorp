@@ -1,6 +1,126 @@
 ---
+import FacebookIcon from "./icons/FacebookIcon.astro";
+import InstagramIcon from "./icons/InstagramIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import WhatsappIcon from "./icons/WhatsappIcon.astro";
 ---
 
-<section>
+<section class="footer">
+    <div class="maincontainer">
+        <div class="logo-footer">
+            <img
+                src="./juriscorp.svg"
+                alt="Juriscorp despacho de abogados en Chihuahua"
+            />
+        </div>
+        <div class="contact-form">
+            <h3>Contáctanos por correo</h3>
+            <input placeholder="hola@gmail.com" />
+        </div>
+        <div class="socialmedia">
+            <a
+                href="https://www.facebook.com/juriscorp.mx"
+                target="_blank"
+                rel="noopener"
+            >
+                <FacebookIcon color="white" width="30" height="30" /></a
+            >
+            <a
+                href="https://www.instagram.com/juriscorp.mx"
+                target="_blank"
+                rel="noopener"
+            >
+                <WhatsappIcon color="white" width="30" height="30" />
+            </a>
+            <a
+                href="https://www.linkedin.com/company/juriscorp-mx"
+                target="_blank"
+                rel="noopener"
+            >
+                <LinkedinIcon color="white" width="30" height="30" />
+            </a>
+            <a
+                href="https://www.linkedin.com/company/juriscorp-mx"
+                target="_blank"
+                rel="noopener"
+            >
+                <InstagramIcon color="white" width="30" height="30" />
+            </a>
+        </div>
+    </div>
+    <div class="developer">
+        <h4>Desarrollador por</h4>
+        <a href="https://devjaredgarcia.com/" target="_blank" rel="noopener"
+            >@GarciaJared</a
+        >
+    </div>
 </section>
-<style></style>
+<style>
+    .footer {
+        background-color: #151313;
+    }
+    .maincontainer {
+        padding-top: 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 5px;
+    }
+    .logo-footer {
+        width: 25%;
+        height: 25%;
+        padding-top: 1rem;
+        margin: 1rem;
+        display: flex;
+        align-self: start;
+        justify-self: start;
+        align-items: start;
+    }
+    .contact-form {
+        width: 100%;
+        height: 100%;
+        padding-top: 1rem;
+        margin: 1rem;
+        display: flex;
+        align-self: stretch;
+        justify-self: center;
+        align-items: center;
+    }
+    .contact-form > h3 {
+        color: white;
+        font-weight: 200;
+    }
+    .contact-form input {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 5px;
+        border: none;
+    }
+    .socialmedia {
+        width: 25%;
+        height: 25%;
+        padding: 1rem;
+        display: flex;
+        align-self: stretch;
+        justify-self: center;
+        align-items: center;
+    }
+    .socialmedia a {
+        padding-top: 1rem;
+        margin: 1rem;
+    }
+    .developer {
+        margin: 1rem;
+        padding: 2rem;
+        text-align: center;
+    }
+    .developer h4 {
+        color: white;
+        margin: 0;
+    }
+    .developer a {
+        color: white;
+        text-decoration: none;
+        font-style: italic;
+        text-decoration: underline;
+    }
+</style>
