@@ -10,9 +10,18 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="Juriscorp" content="Despacho de abogados multidisciplinar en Chihuahua. Representamos casos civiles, familiares, penales y mercantiles." />
+		<meta
+			name="Juriscorp"
+			content="Despacho de abogados multidisciplinar en Chihuahua. Representamos casos civiles, familiares, penales y mercantiles."
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/juriscorp.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap"
+			rel="stylesheet"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -33,18 +42,16 @@ const { title } = Astro.props;
 		);
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #fff;	
+		font-family: "Bodoni Moda", serif;
+		font-optical-sizing: auto;
+		font-weight: 14;
+		font-style: normal;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	@font-face {
+		font-family: "Corbel", sans-serif;
+		src: url("public/fonts/Corbel.ttf") format("ttf");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
 	}
 </style>

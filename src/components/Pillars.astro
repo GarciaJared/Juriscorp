@@ -23,7 +23,7 @@ const OurPillars = [
         OurPillars.map((pillar) => (
             <div class="card">
                 <h2>{pillar.title}</h2>
-                <p>{pillar.description}</p>
+                <p class="corbel">{pillar.description}</p>
             </div>
         ))
     }
@@ -40,6 +40,7 @@ const OurPillars = [
     }
     .card {
         background-color: #f0f0f0;
+        color: #df8d05;
         padding: 1rem;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -56,7 +57,8 @@ const OurPillars = [
     }
     p {
         font-size: 1rem;
-        color: #666;
+        color: #151313;
+        font-family: "Corbel", sans-serif;
     }
     .p:first-child {
         color: white;

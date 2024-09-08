@@ -5,10 +5,13 @@
 <section>
     <div class="container">
         <div class="line">
-            <h2>Te contamos como los tres pilares se aplican en nuestro trabajo</h2>
+            <h1 class="title">
+                Te contamos como <h1 class="oblique">los tres pilares</h1> se aplican
+                en <h1 class="oblique">nuestro trabajo</h1>
+            </h1>
         </div>
 
-        <p>
+        <p class="corbel">
             En Juriscorp, nos esforzamos por brindarte un servicio legal de
             calidad, con un enfoque personalizado y transparente. Nuestro
             compromiso es con la justicia y el cumplimiento riguroso de la ley.
@@ -22,7 +25,7 @@
     .container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        column-gap:20px;
+        column-gap: 20px;
         padding: 1rem;
         max-width: 800px;
         margin: auto;
@@ -33,7 +36,26 @@
     .line {
         width: 100%;
         height: 3px;
-        background-color: #F99E2E;
+        background-color: #f99e2e;
         margin-bottom: 1rem;
+    }
+    .title {
+        margin-bottom: 0;
+        padding: 0;
+        line-height: normal;
+        letter-spacing: normal;
+    }
+    .oblique {
+        font:
+            "Corbel",
+            serif oblique bold 120% cursive;
+        color: #f99e2e;
+        margin: 0;
+        padding: 0;
+    }
+    .corbel {
+        font-family: "Corbel";
+        font-size: 20px;
+        line-height: 1.6;
     }
 </style>
