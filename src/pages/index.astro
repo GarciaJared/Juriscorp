@@ -9,14 +9,16 @@ import Experience from "../components/Experience.astro";
 import Team from "../components/Team.astro";
 import Footer from "../components/Footer.astro";
 import Services from "../components/services.astro";
+import Maps from "../components/Maps.astro";
 ---
 
 <Layout title="Juriscorp despacho de abogados en Chihuahua">
 	<Navbar />
-	<Hero width="100%" height="40%"/>
+	<Hero width="100%" height="40%" />
 	<More />
-	<MainTitle title="Nuestra Experiencia" id="Experiencia"/>
-	<Experience id="Experiencia"
+	<MainTitle title="Nuestra Experiencia" id="Experiencia" />
+	<Experience
+		id="Experiencia"
 		width="100%"
 		height="650px"
 		intro="Nuestro equipo de abogados cuenta con una amplia experiencia en diversas áreas del derecho, siendo los más accesibles y confiables en Chihuahua con un amplio abanico de soluciones que hemos implementado en casos de:"
@@ -24,7 +26,8 @@ import Services from "../components/services.astro";
 	/>
 	<MainTitle title="Servicios" id="Servicios" />
 	<Services />
+	<MainTitle title="Nos ubicamos en" id="" />
+	<Maps/>
+	<Team id="Equipo" />
 </Layout>
-<Team id="Equipo"/>
 <Footer />
-

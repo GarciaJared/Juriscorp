@@ -1,0 +1,41 @@
+<section class="maps">
+    <div class="maps-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.739468827567!2d-106.13869071006776!3d28.697439077498284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ea43550db0ab5f%3A0x7c2e13433c339a75!2sDespacho%20Juridico%20JurisCorp!5e0!3m2!1ses!2sus!4v1727034546759!5m2!1ses!2sus"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+<style>
+    .maps {
+        display: flex;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    .map-container {
+        width: 100%;
+        max-width: 800px; /* Cambia este valor según tus necesidades */
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px; /* Opcional, para esquinas redondeadas */
+    }
+
+    iframe {
+        width: 100%;
+        height: 450px; /* Ajusta la altura según sea necesario */
+        border: 0;
+        border-radius: 8px; /* Opcional, para esquinas redondeadas */
+    }
+
+    /* Responsividad */
+    @media (max-width: 600px) {
+        iframe {
+            height: 300px; /* Ajusta la altura para móviles */
+        }
+    }
+</style>
