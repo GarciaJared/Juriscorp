@@ -1,3 +1,12 @@
+---
+const sections = [
+    { id: "home", label: "Inicio" },
+    { id: "services", label: "Servicios" },
+    { id: "experience", label: "Experiencia" },
+    { id: "team", label: "Colaboradores" },
+];
+---
+
 <nav>
     <div class="logo-container">
         <div class="logo-container">
@@ -8,23 +17,14 @@
                 />
             </a>
         </div>
-
         <ul>
-            <li>
-                <a href="/">Inicio</a>
-            </li>
-            <li>
-                <a href="/experiencia">Experiencia</a>
-            </li>
-            <li>
-                <a href="/servicios">Servicios</a>
-            </li>
-            <li>
-                <a href="/equipo">Equipos</a>
-            </li>
-            <li>
-                <a href="/equipo"></a>
-            </li>
+            {
+                sections.map((section) => (
+                    <li>
+                        <a href={`#${section.id}`}>{section.label}</a>
+                    </li>
+                ))
+            }
         </ul>
     </div>
     <style>
@@ -44,15 +44,13 @@
         .logo-container img {
             width: 100px;
         }
-        ul {
-            display: flex;
-            gap: 1rem;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
         li {
             margin: 0;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
         }
         a {
             color: white;

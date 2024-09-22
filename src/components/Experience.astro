@@ -1,101 +1,178 @@
 ---
 interface ExperienceProps {
-    intro: string;
-    xp: number;
-    category: string;
-    width: string;
-    height: string;
+  intro: string;
+  xp: number;
+  category: string;
+  width: string;
+  height: string;
 }
 const { intro, width, height } = Astro.props;
 const Xp = [
-    { category: "Familiares", xp: 15 },
-    { category: "Civiles", xp: 10 },
-    { category: "Corporativos", xp: 5 },
-    { category: "Penales", xp: 20 },
+  { category: "Familiares", xp: 119 },
+  { category: "Civiles", xp: 71 },
+  { category: "Corporativos", xp: 48 },
+  { category: "Penales", xp: 22 },
 ];
 ---
 
-<section>
-    <div class="img-container">
-        <img
-            src="./leybanner.webp"
-            alt="Juriscorp despacho de abogados en Chihuahua"
-            width={width}
-            height={height}
-        />
-        <div class="overlay">
-            <div class="intro">
-                <p>{intro}</p>
-            </div>
-            <div class="container">
-                {
-                    Xp.map((item) => (
-                        <div class="solved">
-                            <h2 class="number">{item.xp}</h2>
-                            <h4 class="category">{item.category}</h4>
-                        </div>
-                    ))
-                }
-            </div>
-        </div>
+<section id="experience">
+  <div class="img-container">
+    <img
+      src="./leybanner.webp"
+      alt="Juriscorp despacho de abogados en Chihuahua"
+      width={width}
+      height={height}
+    />
+    <div class="overlay">
+      <div class="intro">
+        <p>{intro}</p>
+      </div>
+      <div class="xp-container">
+        {Xp.map((item) => (
+          <div class="solved">
+            <h2 class="number">{item.xp}</h2>
+            <h4 class="category">{item.category}</h4>
+          </div>
+        ))}
+      </div>
     </div>
+  </div>
 </section>
 
 <style>
-    .img-container {
-        position: relative;
+  /* Contenedor de la imagen */
+  .img-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .img-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Escalar la imagen manteniendo la proporción */
+  }
+
+  /* Estilo del overlay */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Transparencia */
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Texto introductorio */
+  .intro {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+  }
+
+  /* Contenedor de la experiencia */
+  .xp-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+  }
+
+  /* Tarjeta de cada experiencia */
+  .solved {
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .number {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5em;
+  }
+
+  .category {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  /* Estilos para tablets y pantallas medianas */
+  @media (min-width: 768px) {
+    .xp-container {
+      grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+      gap: 1.5rem;
     }
-    .img-container img {
-        display: block;
-    }
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        opacity: 0.5; /* Adjust opacity as needed */
-        z-index: 1;
-    }
-    .container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: 20px;
-        padding: 1rem;
-        max-width: 800px;
-        margin: auto;
-        color: #080000;
-        font-size: 20px;
-        line-height: 1.6;
-    }
-    .intro {
-        padding: 1rem;
-        max-width: 800px;
-        margin: auto;
-        color: white;
-        font-size: 20px;
-        line-height: 1.6;
-    }
-    .solved {
-        padding: 1rem;
-        max-width: 800px;
-        margin: auto;
-        color: white;
-        font-size: 20px;
-        line-height: 1.6;
-    }
+
     .number {
-        font-size: 4rem;
-        font-weight: 700;
-        line-height: 1;
-        margin-bottom: 0.5em;
-        align-content: start;
+      font-size: 3.5rem;
     }
+
     .category {
-        font-size: 1.5rem;
-        font-weight: 400;
-        line-height: 1.5;
-        align-content: center;
+      font-size: 1.4rem;
     }
+
+    .intro {
+      font-size: 1.4rem;
+    }
+  }
+
+  /* Estilos para pantallas grandes */
+  @media (min-width: 1024px) {
+    .xp-container {
+      gap: 2rem;
+    }
+
+    .number {
+      font-size: 4rem;
+    }
+
+    .category {
+      font-size: 1.5rem;
+    }
+
+    .intro {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Estilos para pantallas pequeñas (móviles) */
+  @media (max-width: 480px) {
+    .xp-container {
+      grid-template-columns: 1fr; /* Una columna para móviles */
+    }
+
+    .number {
+      font-size: 2.5rem;
+    }
+
+    .category {
+      font-size: 1.1rem;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+  }
 </style>
