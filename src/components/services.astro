@@ -6,193 +6,197 @@ import GavelIcon from "../components/icons/GavelIcon.astro";
 ---
 
 <section class="services" id="services">
-    <div class="text-beside">
-      <h3>Conoce nuestros</h3>
-      <h1>Servicios</h1>
-      <p>
-        Nuestro trabajo se enfoca en estas cuatro especialidades,
-        atendemos nuestros casos con el mayor de los cuidados y
-        transparencia para poder ofrecer servicios de calidad.
-      </p>
-    </div>
-    <div class="squared-background">
-      <div class="cards-container">
-        <div class="card">
-          <GavelIcon class="icon" width="50px" height="50px" />
-          <h2>Penal</h2>
-          <p>
-            Los asuntos penales son aquellos que como
-            consecuencia el acusado puede ir a la cárcel.
-          </p>
-        </div>
-        <div class="card">
-          <HandyshakeIcon class="icon" width="50px" height="50px" />
-          <h2>Mercantil</h2>
-          <p>
-            Los asuntos mercantiles son aquellos que relacionan
-            con la iniciativa privada.
-          </p>
-        </div>
-        <div class="card">
-          <BriefcaseIcon class="icon" width="50px" height="50px" />
-          <h2>Civil</h2>
-          <p>
-            Los asuntos civiles son los que se relacionan con el
-            gobierno y los individuos.
-          </p>
-        </div>
-        <div class="card">
-          <BalanceIcon class="icon" width="50px" height="50px" />
-          <h2>Familiar</h2>
-          <p>
-            Los asuntos familiares son aquellos que surgen de
-            situaciones delicadas en el núcleo familiar.
-          </p>
-        </div>
+  <div class="text-beside">
+    <h3>Conoce nuestros</h3>
+    <h1>Servicios</h1>
+    <p>
+      Nuestro trabajo se enfoca en estas cuatro especialidades, atendemos
+      nuestros casos con el mayor de los cuidados y transparencia para poder
+      ofrecer servicios de calidad.
+    </p>
+  </div>
+  <div class="squared-background">
+    <div class="cards-container">
+      <div class="card">
+        <GavelIcon class="icon" width="50px" height="50px" />
+        <h2>Penal</h2>
+        <p>
+          Los asuntos penales son aquellos que como consecuencia el acusado
+          puede ir a la cárcel.
+        </p>
+      </div>
+      <div class="card">
+        <HandyshakeIcon class="icon" width="50px" height="50px" />
+        <h2>Mercantil</h2>
+        <p>
+          Los asuntos mercantiles son aquellos que relacionan con la iniciativa
+          privada.
+        </p>
+      </div>
+      <div class="card">
+        <BriefcaseIcon class="icon" width="50px" height="50px" />
+        <h2>Civil</h2>
+        <p>
+          Los asuntos civiles son los que se relacionan con el gobierno y los
+          individuos.
+        </p>
+      </div>
+      <div class="card">
+        <BalanceIcon class="icon" width="50px" height="50px" />
+        <h2>Familiar</h2>
+        <p>
+          Los asuntos familiares son aquellos que surgen de situaciones
+          delicadas en el núcleo familiar.
+        </p>
       </div>
     </div>
-  </section>
-  
-  <style>
-    .text-beside h3 {
-      margin-bottom: 0em;
-    }
-  
+  </div>
+</section>
+
+<style>
+  .text-beside h3 {
+    margin-bottom: 0em;
+  }
+
+  .text-beside h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1;
+    margin-bottom: 0.2em;
+    margin-top: 0.35em;
+  }
+
+  .text-beside p {
+    font-size: 1.5rem;
+    font-weight: 250;
+    text-align: left;
+    line-height: 1.6;
+    margin-top: 0rem;
+  }
+
+  .services {
+    font-family: "Corbel", sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Texto ocupa 1/3, cards 2/3 */
+    gap: 2rem; /* Espacio entre las columnas */
+    padding: 2rem;
+    align-items: center; /* Centrar verticalmente */
+  }
+
+  .text-beside {
+    color: black;
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .squared-background {
+    background-color: black;
+    padding: 2rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten */
+    gap: 1rem; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas */
+    position: relative;
+    width: 100%;
+    z-index: 1; /* Coloca las tarjetas por encima del fondo negro */
+  }
+
+  .card {
+    color: #333;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 350px; /* Ajusta el ancho máximo de cada tarjeta */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    text-align: center; /* Centra el texto */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
+  }
+
+  .card h2 {
+    margin: 0.5rem 0; /* Espacio entre el icono y el título */
+    font-size: 2rem;
+  }
+
+  .card p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0.5rem 0; /* Añade un pequeño margen debajo del título */
+    text-align: center; /* Centra el texto dentro del párrafo */
+  }
+
+  .icon {
+    margin-top: 0;
+    margin-bottom: 0.5rem; /* Espacio entre el icono y el título */
+  }
+
+  /* Estilos para pantallas grandes */
+  @media (min-width: 1024px) {
     .text-beside h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      text-align: left;
-      line-height: 1;
-      margin-bottom: 0.2em;
-      margin-top: 0.35em;
+      font-size: 3.5rem;
     }
-  
+
     .text-beside p {
-      font-size: 1.5rem;
-      font-weight: 250;
-      text-align: left;
-      line-height: 1.6;
-      margin-top: 0rem;
+      font-size: 1.6rem;
     }
-  
+  }
+
+  /* Estilos para tablets */
+  @media (max-width: 768px) {
     .services {
-      font-family: "Corbel", sans-serif;
-      display: grid;
-      grid-template-columns: 1fr 2fr; /* Texto ocupa 1/3, cards 2/3 */
-      gap: 2rem; /* Espacio entre las columnas */
-      padding: 2rem;
-      align-items: center; /* Centrar verticalmente */
+      grid-template-columns: 1fr; /* Una columna */
+      text-align: center; /* Centrar el texto */
     }
-  
+
     .text-beside {
-      color: black;
-      padding: 1rem;
-      max-width: 100%;
+      padding-bottom: 2rem; /* Espacio adicional para tablets */
     }
-  
-    .squared-background {
-      background-color: black;
-      padding: 2rem;
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
-      border-radius: 8px;
-      position: relative;
-      overflow: hidden;
+  }
+
+  /* Estilos para móviles */
+  @media (max-width: 480px) {
+    .text-beside h1 {
+      font-size: 2.5rem;
     }
-  
-    .cards-container {
+
+    .text-beside h3 {
+      font-size: 1.5rem;
       display: flex;
-      flex-wrap: wrap; /* Permite que las tarjetas se ajusten */
-      gap: 1rem; /* Espacio entre las tarjetas */
-      justify-content: center; /* Centra las tarjetas */
-      position: relative;
-      width: 100%;
-      z-index: 1; /* Coloca las tarjetas por encima del fondo negro */
+      justify-content: left;
     }
-  
+    .text-beside p {
+      font-size: 1.2rem;
+    }
+
     .card {
-      color: #333;
+      width: 100%; /* Tarjetas ocupan todo el ancho */
+      font-size: 1rem;
       padding: 1rem;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      font-size: 1.2rem;
-      width: 100%;
-      max-width: 350px; /* Ajusta el ancho máximo de cada tarjeta */
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Centra el contenido horizontalmente */
-      justify-content: center; /* Centra el contenido verticalmente */
-      text-align: center; /* Centra el texto */
-      transition: transform 0.3s ease-in-out;
     }
-  
-    .card:hover {
-      transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
-    }
-  
-    .card h2 {
-      margin: 0.5rem 0; /* Espacio entre el icono y el título */
-      font-size: 2rem;
-    }
-  
-    .card p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin: 0.5rem 0; /* Añade un pequeño margen debajo del título */
-      text-align: center; /* Centra el texto dentro del párrafo */
-    }
-  
+
     .icon {
-      margin-top: 0;
-      margin-bottom: 0.5rem; /* Espacio entre el icono y el título */
+      width: 40px;
+      height: 40px;
     }
-  
-    /* Estilos para pantallas grandes */
-    @media (min-width: 1024px) {
-      .text-beside h1 {
-        font-size: 3.5rem;
-      }
-  
-      .text-beside p {
-        font-size: 1.6rem;
-      }
-    }
-  
-    /* Estilos para tablets */
-    @media (max-width: 768px) {
-      .services {
-        grid-template-columns: 1fr; /* Una columna */
-        text-align: center; /* Centrar el texto */
-      }
-  
-      .text-beside {
-        padding-bottom: 2rem; /* Espacio adicional para tablets */
-      }
-    }
-  
-    /* Estilos para móviles */
-    @media (max-width: 480px) {
-      .text-beside h1 {
-        font-size: 2.5rem;
-      }
-  
-      .text-beside p {
-        font-size: 1.2rem;
-      }
-  
-      .card {
-        width: 100%; /* Tarjetas ocupan todo el ancho */
-        font-size: 1rem;
-        padding: 1rem;
-      }
-  
-      .icon {
-        width: 40px;
-        height: 40px;
-      }
-    }
-  </style>
-  
+  }
+</style>

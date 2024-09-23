@@ -13,8 +13,8 @@ const Xp = [
   { category: "Corporativos", xp: 48 },
   { category: "Penales", xp: 22 },
 ];
----
 
+---
 <section id="experience">
   <div class="img-container">
     <img
@@ -24,7 +24,10 @@ const Xp = [
       height={height}
     />
     <div class="overlay">
-      <div class="intro">
+      <div class="title">
+        <h1>Nuestra Experiencia</h1>
+      </div>
+      <div class="intro" style="padding-bottom: 3px;">
         <p>{intro}</p>
       </div>
       <div class="xp-container">
@@ -37,10 +40,15 @@ const Xp = [
       </div>
     </div>
   </div>
+ 
 </section>
 
+
+
 <style>
-  /* Contenedor de la imagen */
+  .title{
+    color: white;
+  }
   .img-container {
     position: relative;
     width: 100%;
@@ -52,17 +60,16 @@ const Xp = [
     display: block;
     width: 100%;
     height: auto;
-    object-fit: cover; /* Escalar la imagen manteniendo la proporción */
+    object-fit: cover;
   }
 
-  /* Estilo del overlay */
   .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Transparencia */
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -72,7 +79,6 @@ const Xp = [
     box-sizing: border-box;
   }
 
-  /* Texto introductorio */
   .intro {
     text-align: center;
     margin-bottom: 1rem;
@@ -82,10 +88,9 @@ const Xp = [
     max-width: 800px;
   }
 
-  /* Contenedor de la experiencia */
   .xp-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
     width: 100%;
     max-width: 800px;
@@ -94,7 +99,6 @@ const Xp = [
     text-align: center;
   }
 
-  /* Tarjeta de cada experiencia */
   .solved {
     border-radius: 8px;
     padding: 1rem;
@@ -102,6 +106,11 @@ const Xp = [
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s ease; /* Añade transición */
+  }
+
+  .solved:hover {
+    transform: scale(1.05); /* Efecto de hover */
   }
 
   .number {
@@ -117,10 +126,9 @@ const Xp = [
     line-height: 1.5;
   }
 
-  /* Estilos para tablets y pantallas medianas */
   @media (min-width: 768px) {
     .xp-container {
-      grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
     }
 
@@ -137,7 +145,6 @@ const Xp = [
     }
   }
 
-  /* Estilos para pantallas grandes */
   @media (min-width: 1024px) {
     .xp-container {
       gap: 2rem;
@@ -156,23 +163,27 @@ const Xp = [
     }
   }
 
-  /* Estilos para pantallas pequeñas (móviles) */
   @media (max-width: 480px) {
-    .xp-container {
-      grid-template-columns: 1fr; /* Una columna para móviles */
+    .title{
+      margin-top: -300px;
+      color: white;
     }
-
-    .number {
-      font-size: 2.5rem;
-    }
-
-    .category {
-      font-size: 1.1rem;
-    }
-
     .intro {
-      font-size: 1.1rem;
-      line-height: 1.4;
+      font-size: 1rem;
     }
-  }
+    .overlay{
+      height: 1000px;
+    }
+    .img-container img {
+      height: 1000px;
+      object-fit: cover;
+    }
+    .xp-container {
+      width: 100%;
+      height: 200px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
 </style>
